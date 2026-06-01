@@ -1,0 +1,281 @@
+@font-face {
+
+    font-family: 'NiseSegaSonic';
+
+    src:
+    url('/static/fonts/NiseSegaSonic.ttf');
+}
+
+/* =======================
+   BODY
+======================= */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    background: black;
+}
+
+/* =======================
+   FONDO
+======================= */
+
+.background-overlay {
+
+    min-height: 100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.50),
+        rgba(0,0,0,.50)
+    ),
+    url('/static/fondo2.jpg');
+
+    background-size: contain;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+/* =======================
+   CONTENEDOR
+======================= */
+
+.main-container {
+
+    width: 90%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+/* =======================
+   TITULO
+======================= */
+
+.titulo {
+
+    font-family:
+    'NiseSegaSonic';
+
+    color: rgba(255, 255, 255, 0.911);
+
+    font-size: 7rem;
+
+    margin-top: 40px;
+
+    margin-bottom: 75px;
+}
+
+/* =======================
+   CONTENIDO
+======================= */
+
+.content-row {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+/* =======================
+   GRAFICA
+======================= */
+
+.chart-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.chart-container {
+
+    width: 500px;
+    height: 500px;
+}
+
+.chart-info {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 50px;
+}
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: rgb(255, 255, 255);
+
+    font-family:
+    'NiseSegaSonic';
+
+    font-size: 1.1rem;
+}
+
+.circle {
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.green {
+
+    background:
+    #00d93a;
+}
+
+.red {
+
+    background:
+    #d90000;
+}
+
+/* =======================
+   TEXTO DERECHO
+======================= */
+
+.right-panel {
+
+    width: 420px;
+}
+
+.risk-text {
+
+    color: white;
+
+    font-family:
+    'NiseSegaSonic';
+
+    font-size: 2rem;
+
+    line-height: 1.5;
+
+    text-align: justify;
+
+    margin-bottom: 80px;
+}
+
+/* =======================
+   RECOMENDACIONES
+======================= */
+
+.recommend-box {
+
+    border:
+    5px solid #5f5232;
+
+    background:
+    rgba(202, 205, 170,.50);
+
+    width: 100%;
+}
+
+.recommend-title {
+
+    text-align: center;
+
+    color: white;
+
+    font-family:
+    'NiseSegaSonic';
+
+    font-size: 1.95rem;
+
+    padding: 20px;
+}
+
+.download-btn {
+
+    display: block;
+
+    width: fit-content;
+
+    margin:
+    20px auto 30px auto;
+
+    background:
+    #5f5232;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding:
+    20px 45px;
+
+    border-radius: 50px;
+
+    font-family:
+    'NiseSegaSonic';
+
+    font-size: 1.4rem;
+}
+
+/* =======================
+   VOLVER
+======================= */
+
+.volver-btn {
+    margin-top: 80px;
+
+    margin-bottom: 25px;
+
+    text-decoration: none;
+
+    background: #2b0592;
+
+    color: white;
+
+    border: none;
+
+    padding:
+    20px 50px;
+
+    border-radius: 50px;
+
+    font-family:
+    'NiseSegaSonic';
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.volver-btn:hover {
+
+    background: #210047;
+
+}

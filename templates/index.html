@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modelo Predictivo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="main-container">
+    
+        <h1 class="main-title">
+            MODELO PREDICTIVO DE
+            <br>
+            SATISFACCION DEL CLIENTE
+        </h1>
+    
+        <div class="form-table">
+    
+            <div class="col-lg-7 d-flex justify-content-center">
+
+                <div class="panel-box">
+
+                    <form action="/resultados" method="POST">
+
+                        <div class="form-table">
+                    
+                            <!-- EDAD -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    EDAD
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <input type="number"
+                                    name="age"
+                                    class="custom-input"
+                                    min="0"
+                                    step="1"
+                                    required
+                                    >
+                    
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- GENERO -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    GENERO
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <div class="option-group">
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="gender"
+                                               id="male"
+                                               value="1"
+                                               required>
+                    
+                                        <label class="option-btn"
+                                               for="male">
+                    
+                                            MASCULINO
+                    
+                                        </label>
+                    
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="gender"
+                                               id="female"
+                                               value="0">
+                    
+                                        <label class="option-btn"
+                                               for="female">
+                    
+                                            FEMENINO
+                    
+                                        </label>
+                    
+                                    </div>
+                    
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- PERMANENCIA -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    PERMANENCIA
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <input type="number"
+                                    name="tenure"
+                                    class="custom-input"
+                                    min="0"
+                                    step="1"
+                                    required>
+                    
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- CARGOS MENSUALES -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    CARGOS MENSUALES
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <input type="number"
+                                    name="monthly"
+                                    class="custom-input"
+                                    min="0"
+                                    step="0.01"
+                                    required>
+                    
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- TIPO DE CONTRATO -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    TIPO DE CONTRATO
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <div class="option-group">
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="contract"
+                                               id="mes"
+                                               value="0"
+                                               required>
+                    
+                                        <label class="option-btn"
+                                               for="mes">
+                    
+                                            MES A MES
+                    
+                                        </label>
+                    
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="contract"
+                                               id="unano"
+                                               value="1">
+                    
+                                        <label class="option-btn"
+                                               for="unano">
+                    
+                                            1 AÑO
+                    
+                                        </label>
+                    
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="contract"
+                                               id="dosanos"
+                                               value="2">
+                    
+                                        <label class="option-btn"
+                                               for="dosanos">
+                    
+                                            2 AÑOS
+                    
+                                        </label>
+                    
+                                    </div>
+                    
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- SERVICIO INTERNET -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    SERVICIO DE INTERNET
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <div class="option-group">
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="internet"
+                                               id="fibra"
+                                               value="1"
+                                               required>
+                    
+                                        <label class="option-btn"
+                                               for="fibra">
+                    
+                                            FIBRA OPTICA
+                    
+                                        </label>
+                    
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="internet"
+                                               id="dsl"
+                                               value="0">
+                    
+                                        <label class="option-btn"
+                                               for="dsl">
+                    
+                                            DSL
+                    
+                                        </label>
+                    
+                                    </div>
+                    
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- TOTAL DE CARGO -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    TOTAL DE CARGO
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <input type="number"
+                                    name="total"
+                                    class="custom-input"
+                                    min="0"
+                                    step="0.01"
+                                    required>
+                    
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- SOPORTE TECNICO -->
+                            <div class="form-row">
+                    
+                                <div class="form-label-box">
+                                    SOPORTE TECNICO
+                                </div>
+                    
+                                <div class="input-box">
+                    
+                                    <div class="option-group">
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="support"
+                                               id="si"
+                                               value="1"
+                                               required>
+                    
+                                        <label class="option-btn"
+                                               for="si">
+                    
+                                            SI
+                    
+                                        </label>
+                    
+                    
+                                        <input type="radio"
+                                               class="btn-check"
+                                               name="support"
+                                               id="no"
+                                               value="0">
+                    
+                                        <label class="option-btn"
+                                               for="no">
+                    
+                                            NO
+                    
+                                        </label>
+                    
+                                    </div>
+                    
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+                    
+                        <!-- BOTON -->
+                        <div class="button-container">
+                    
+                            <button type="submit"
+                                    class="predict-btn">
+                    
+                                PREDECIR
+                    
+                            </button>
+                    
+                        </div>
+                    
+                    </form>
+
+                </div>
+
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    </body>
+</html>

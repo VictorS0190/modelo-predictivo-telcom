@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Resultados</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style_resultados.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="background-overlay">
+
+    <div class="main-container">
+
+        <!-- TITULO -->
+
+        <h1 class="titulo">
+            RESULTADOS
+        </h1>
+
+        <!-- CONTENIDO -->
+
+        <div class="content-row">
+
+            <!-- GRAFICA -->
+
+            <div class="chart-section">
+
+                <div class="chart-container">
+
+                    <canvas id="grafica"></canvas>
+
+                </div>
+
+                <div class="chart-info">
+
+                    <div class="legend-item">
+
+                        <div class="circle green"></div>
+
+                        <span>
+                            RENOVAR
+                            {{ prob_renovar }} '/.
+                        </span>
+
+                    </div>
+
+                    <div class="legend-item">
+
+                        <div class="circle red"></div>
+
+                        <span>
+                            CANCELAR
+                            {{ prob_cancelar }} '/.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PANEL DERECHO -->
+
+            <div class="right-panel">
+
+                <div class="risk-text">
+
+                    EL CLIENTE CUENTA
+                    CON UN RIESGO
+
+                    <span
+                    style="color:
+                    {{ color }}">
+
+                        {{ riesgo }}
+
+                    </span>
+
+                    DE ABANDONAR
+                    EL SERVICIO
+
+                </div>
+
+                <!-- RECOMENDACIONES -->
+
+                <div class="recommend-box">
+
+                    <div class="recommend-title">
+                        RECOMENDACIONES
+                    </div>
+
+                    <a class="download-btn"
+                    href="{{ url_for(
+                    'static',
+                    filename='pdfs/' + pdf
+                    ) }}"
+                    download>
+
+                        DESCARGAR
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTON VOLVER -->
+
+        <a href="/"
+        class="volver-btn">
+
+            VOLVER
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const ctx =
+document.getElementById(
+'grafica'
+);
+
+new Chart(ctx, {
+
+    type: 'doughnut',
+
+    data: {
+
+        labels: [
+            'Renovar',
+            'Cancelar'
+        ],
+
+        datasets: [{
+
+            data: [
+                {{ prob_renovar }},
+                {{ prob_cancelar }}
+            ],
+
+            backgroundColor: [
+                '#00d93a',
+                '#d90000'
+            ],
+
+            borderWidth: 0
+
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        cutout: '55%',
+
+        plugins: {
+
+            legend: {
+                display: false
+            }
+
+        }
+    }
+
+});
+
+</script>
+
+</body>
+</html>

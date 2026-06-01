@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 'NiseSegaSonic';
+    src: url('/static/fonts/NiseSegaSonic.ttf');
+}
+
+/* =====================
+   GENERAL
+===================== */
+
+html, body {
+
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* =====================
+   FONDO
+===================== */
+
+body {
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.80),
+        rgba(0,0,0,0.80)
+    ),
+    url("/static/fondo1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* =====================
+   CONTENEDOR
+===================== */
+
+.main-container {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    padding-top: 20px;
+
+    box-sizing: border-box;
+}
+
+/* =====================
+   TITULO
+===================== */
+
+.main-title {
+
+    font-family: 'NiseSegaSonic';
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 3rem;
+
+    line-height: 2;
+
+    margin-bottom: 30px;
+}
+
+/* =====================
+   TABLA
+===================== */
+
+.form-table {
+
+    width: 1000px;
+
+    max-width: 95%;
+
+    position: relative;
+
+    left: 41.5%;
+
+    transform: translateX(-50%);
+}
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+    290px 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+/* =====================
+   LABELS AZULES
+===================== */
+
+.form-label-box {
+
+    background: #3558ff;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'NiseSegaSonic';
+
+    font-size: 1rem;
+
+    min-height: 58px;
+}
+
+/* =====================
+   INPUTS
+===================== */
+
+.input-box {
+
+    background: #d9dcef;
+
+    padding: 8px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 58px;
+}
+
+.custom-input {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 1rem;
+
+    outline: none;
+}
+
+/* =====================
+   BOTONES OPCIONES
+===================== */
+
+.option-group {
+
+    display: flex;
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+.option-btn {
+
+    flex: 1;
+
+    background: #3558ff;
+
+    color: white;
+
+    border-radius: 30px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    font-family: Impact, sans-serif;
+
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+
+    transition: .2s;
+}   
+
+.option-btn:hover {
+
+    background: #5573ff;
+}
+
+.btn-check:checked + .option-btn {
+
+    background: #1fc8ff;
+}
+
+/* =====================
+   BOTON PREDECIR
+===================== */
+
+.button-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    position: relative;
+
+    left: -60px;
+}
+
+.predict-btn {
+
+    background: #2b0592;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 18px 55px;
+
+    font-family: 'NiseSegaSonic';
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.predict-btn:hover {
+
+    background: #05a712;
+}
